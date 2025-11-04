@@ -4,11 +4,15 @@ def on_gesture_shake():
     global hand
     hand = randint(1, 3)
     if hand == 1:
-        basic.show_icon(IconNames.SMALL_SQUARE)
-        music.play(music.builtin_playable_sound_effect(soundExpression.giggle),
-            music.PlaybackMode.UNTIL_DONE)
-    elif hand == 2:
         basic.show_icon(IconNames.SQUARE)
+    elif hand == 2:
+        basic.show_leds("""
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            """)
         music.play(music.tone_playable(262, music.beat(BeatFraction.WHOLE)),
             music.PlaybackMode.UNTIL_DONE)
     else:
